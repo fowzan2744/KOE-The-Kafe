@@ -29,7 +29,7 @@
   <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg">
   <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
   <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg">
-
+<script src="app.js" defer></script>
 </head>
 
 <body id="top">
@@ -68,7 +68,7 @@
           <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
         </div>
 
-        <span class="span">To add</span>
+        <span class="span">+91 98989 89898</span>
       </a>
 
       <div class="separator"></div>
@@ -292,13 +292,12 @@
       <section class="section service bg-black-10 text-center" id="menu-section" aria-label="service">
         <div class="container menu-container">
 
-          <p class="section-subtitle label-2">Flavors For Royalty</p>
+          <p class="section-subtitle label-2">Indulge in Divine Delights</p>
 
-          <h2 class="headline-1 section-title">We Offer Top Notch</h2>
+          <h2 class="headline-1 section-title">Savor Our Irresistible Creations</h2>
 
           <p class="section-text">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum has been the industrys
-            standard dummy text ever.
+            Elevate your culinary experience with our exquisite selection of <b>coffee, cheeses, breads</b>, and delightful in-house baked products. At Koe-The Kafe, we take pride in offering a menu fit for royalty.
           </p>
 
           <!-- /Cards List -->
@@ -513,7 +512,7 @@
           </p>
 
     <!-- Signup Form -->
-    <form id="signupForm" class="signup-form">
+    <form id="signupForm" class="signup-form" action="/submit-form" method="post">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
 
@@ -525,7 +524,33 @@
         <span class="text text-2" aria-hidden="true">Sign Up</span>
       </button>
     </form>
-
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const form = document.getElementById('signupForm');
+  
+          form.addEventListener('submit', function (event) {
+              event.preventDefault();
+  
+              // Collect form data
+              const formData = new FormData(form);
+  
+              // Send data to the Google Apps Script web app URL
+              fetch('your-web-app-url', {
+                  method: 'POST',
+                  body: formData,
+              })
+                  .then(response => {
+                      // Handle the response as needed
+                      console.log('Form submitted successfully:', response);
+                      // You can redirect the user or show a success message here
+                  })
+                  .catch(error => {
+                      console.error('Error:', error);
+                      // Handle the error, show an error message, etc.
+                  });
+          });
+      });
+  </script>
   </div>
 </section>
 
@@ -615,7 +640,7 @@
             <div class="combine">
 
               <div class="special-dish-banner">
-                <img src="./assets/images/special-dish-banner.jpg" width="940" height="900" loading="lazy"
+                <img src="./assets/images/pizza.jfif" width="940" height="900" loading="lazy"
                   alt="special dish" class="img-cover">
               </div>
 
@@ -627,10 +652,11 @@
 
                   <p class="section-subtitle label-2">Specialities</p>
 
-                  <h2 class="headline-1 section-title">In-house baked products </h2>
+                  <h2 class="headline-1 section-title">In-house <br>baked products </h2>
 
                   <p class="section-text">
-                    "Insert text about the dish here"
+                    Indulge in the heavenly flavors of our freshly baked delights. From artisan bread to delectable pastries,
+                    our in-house baked products are crafted with love and perfection.
                   </p>
 
                  <!-- <div class="wrapper">
@@ -665,10 +691,11 @@
 
                   <p class="section-subtitle label-2">Speciality</p>
 
-                  <h2 class="headline-1 section-title">Own Coffee Maker Machine</h2>
+                  <h2 class="headline-1 section-title">Own Coffee Roasting Machine</h2>
 
                   <p class="section-text">
-                    Event Discription
+                    Immerse yourself in the rich aroma and distinctive flavors of our coffee, freshly roasted in-house. Our
+              state-of-the-art coffee roasting machine ensures a coffee experience like no other.
                   </p>
 
                   <!-- <div class="wrapper">
@@ -706,7 +733,8 @@
                   <h2 class="headline-1 section-title">Live Streaming of Cricket Matches and TV Shows</h2>
   
                   <p class="section-text">
-                    Event Discription
+                    Enjoy your favorite sports matches and TV shows live at our cafe. Our live streaming events create a
+                    vibrant atmosphere, making your visit a delightful and entertaining experience.
                   </p>
   
                   <!-- <div class="wrapper">
@@ -885,12 +913,12 @@
               <div class="feature-card">
 
                 <div class="card-icon">
-                  <img src="./assets/images/COFFEEBEAN.jpg" width="100" height="80" loading="lazy" alt="icon">
+                  <img src="./assets/images/features-icon-1.png" width="100" height="80" loading="lazy" alt="icon">
                 </div>
 
                 <h3 class="title-2 card-title">Hygienic Food</h3>
 
-                <p class="label-1 card-text">Lorem Ipsum is simply dummy printing and typesetting.</p>
+                <p class="label-1 card-text"> Indulge in a dining experience with the assurance of utmost hygiene.</p>
 
               </div>
             </li>
@@ -902,9 +930,9 @@
                   <img src="./assets/images/features-icon-2.png" width="100" height="80" loading="lazy" alt="icon">
                 </div>
 
-                <h3 class="title-2 card-title">Fresh Environment</h3>
+                <h3 class="title-2 card-title">Serene Ambience</h3>
 
-                <p class="label-1 card-text">Lorem Ipsum is simply dummy printing and typesetting.</p>
+                <p class="label-1 card-text">The perfect setting for a relaxing and enjoyable time.</p>
 
               </div>
             </li>
@@ -918,7 +946,7 @@
 
                 <h3 class="title-2 card-title">Skilled Chefs</h3>
 
-                <p class="label-1 card-text">Lorem Ipsum is simply dummy printing and typesetting.</p>
+                <p class="label-1 card-text">Our culinary team comprises skilled chefs who bring their expertise to every dish.</p>
 
               </div>
             </li>
@@ -932,7 +960,7 @@
 
                 <h3 class="title-2 card-title">Event & Party</h3>
 
-                <p class="label-1 card-text">Lorem Ipsum is simply dummy printing and typesetting.</p>
+                <p class="label-1 card-text">Memorable gatherings filled with delicious food </p>
 
               </div>
             </li>
@@ -1030,11 +1058,7 @@
 
           </ul>
 
-          <a href="#" class="btn btn-primary">
-            <span class="text text-1">View Our Blog</span>
 
-            <span class="text text-2" aria-hidden="true">View Our Blog</span>
-          </a>
 
         </div>
       </section>
